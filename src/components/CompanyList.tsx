@@ -1,19 +1,21 @@
-import React from 'react'
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
-import Paper from '@mui/material/Paper';
+import React, { useState, useEffect} from 'react'
+import Companycard from './Companycard'
 
+  interface FilteredProps {
+    filteredData:any[]
+  }
 
+    const CompanyList:React.FC<FilteredProps>= ({filteredData }) => {
 
-const CompanyList:React.FC = () => {
     return (
         <div>
-            
-        </div>
+            {filteredData.map((item: any , index: number) => {
+                return (
+                    
+                <Companycard key={index} item={item} index={index}
+                 />)}
+            )} 
+    </div>
     )
 }
 
